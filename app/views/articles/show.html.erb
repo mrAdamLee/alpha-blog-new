@@ -1,0 +1,10 @@
+
+<h1>Articles#show</h1>
+
+<p><strong>Title:</strong></p> 
+<%= @article.title %>
+
+<p><strong>Description:</strong></p> 
+<%= @article.description %>
+
+<%= button_to 'Return to listings', articles_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" , method: :get %>

@@ -1,0 +1,29 @@
+<% if @article.errors.any? %>
+
+  <h2> The following errors prevented article from being saved </h2>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+      <li> <%= msg %> </li>
+    <% end %>
+  </ul>
+  
+<% end %>
+<%= form_with(model: @article, local: true) do |f| %> <%# we define which model we are talking about via scope, give it url to submit via url %>
+  <p>
+    <div class="field">
+      <%= f.label :title %> <br/>
+      <%= f.text_field :title, class: "block border border-grey-light w-full p-3 rounded mb-4" %>
+    </div>
+  </p>
+  <p>
+    <%= f.label :description %> <br/>
+    <%= f.text_area :description, class: "block border border-grey-light w-full p-3 rounded mb-4" %>
+  </p>
+
+  <p>
+    <%= f.button class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+  </p>
+
+<% end %>
+
+<%= button_to 'Return to listings', articles_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" , method: :get %>
