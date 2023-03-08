@@ -9,7 +9,7 @@
   
 <% end %>
 <%= form_with(model: @article, local: true) do |f| %> <%# we define which model we are talking about via scope, give it url to submit via url %>
-  <p>
+  <p class="mt-16">
     <div class="field">
       <%= f.label :title %> <br/>
       <%= f.text_field :title, class: "block border border-grey-light w-full p-3 rounded mb-4" %>
